@@ -1,68 +1,72 @@
-import { useEffect, useState } from 'react'
-import Loader from 'react-loaders'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useRef } from 'react'
-import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../AnimatedLetters'
-import './index.scss'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { useEffect, useState } from "react";
+import Loader from "react-loaders";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import AnimatedLetters from "../AnimatedLetters";
+import "./index.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-  const form = useRef()
-  const contactArray = 'Contact Me'.split('')
+  const [letterClass, setLetterClass] = useState("text-animate");
+  const form = useRef();
+  const contactArray = "Contact Me".split("");
 
   useEffect(() => {
     return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
+      setLetterClass("text-animate-hover");
+    }, 3000);
+  }, []);
 
   const sendEmail = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    // new code here
+    console.log("gett", form);
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMIAL_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        `service_lwzuwue`,
+        `template_ts085ut`,
         form.current,
-        process.env.REACT_APP_PUBLIC_KEY
+        `5_GH_q61AR4fweFa1`
       )
       .then(
-        () => {
+        (result) => {
+          console.log(result.text);
           // alert('Message successfully sent!')
-          toast.success('Message successfully sent!', {
-            position: 'bottom-center',
+          toast.success("Message successfully sent!", {
+            position: "bottom-center",
             autoClose: 3500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: 'dark',
-          })
+            theme: "dark",
+          });
           const timeout = setTimeout(() => {
-            window.location.reload(false)
-          }, 3900)
+            window.location.reload(false);
+          }, 3900);
 
-          return () => clearTimeout(timeout)
+          return () => clearTimeout(timeout);
         },
-        () => {
+        (error) => {
+          console.log(error.text);
           // alert('Failed to send the message, please try again')
-          toast.error('Failed to send the message, please try again', {
-            position: 'bottom-center',
+          toast.error("Failed to send the message, please try again", {
+            position: "bottom-center",
             autoClose: 3500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: 'dark',
-          })
+            theme: "dark",
+          });
         }
-      )
-  }
+      );
+  };
 
   return (
     <>
@@ -118,25 +122,30 @@ const Contact = () => {
           </div>
         </div>
         <div className="info-map">
-          Sudip Banerjee
+          Rasel Mahmud
           <br />
-          Kolkata, <br />
-          West Bengal, <br />
-          India
+          Chengdu City, <br />
+          Sichuan Province, <br />
+          China
           <br />
         </div>
         <div className="map-wrap">
-          <MapContainer center={[22.56263, 88.36304]} zoom={13}>
+          <MapContainer
+            center={[30.822183957011042, 104.18357327727188]}
+            zoom={13}
+          >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[22.56263, 88.36304]}>
-              <Popup>Sudip lives here, come over for a cup of coffee :)</Popup>
+            <Marker position={[30.822183957011042, 104.18357327727188]}>
+              <Popup>
+                Rasel Mahmud lives here, come over for a cup of coffee (:
+              </Popup>
             </Marker>
           </MapContainer>
         </div>
       </div>
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

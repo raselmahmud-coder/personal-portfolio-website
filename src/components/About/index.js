@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import {
   faAngular,
   faCss3,
@@ -8,23 +8,23 @@ import {
   faJsSquare,
   faReact,
   faPython,
-} from '@fortawesome/free-brands-svg-icons'
-import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './index.scss'
+} from "@fortawesome/free-brands-svg-icons";
+import Loader from "react-loaders";
+import AnimatedLetters from "../AnimatedLetters";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./index.scss";
 
 const About = () => {
-  const aboutArray = 'About Me'.split('')
+  const aboutArray = "About Me".split("");
 
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState("text-animate");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 2000)
-    return () => clearTimeout(timer)
-  }, [])
+      setLetterClass("text-animate-hover");
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -37,22 +37,23 @@ const About = () => {
               idx={15}
             />
           </h1>
-          <p>
-            I'm a Computer Science Undergrad student at Indian Institute of
-            Information Technology and Management, Gwalior.
-          </p>
-          <p>
-            I'm a very ambitious Full stack developer. I love Automating tasks.
-            Also experienced with Natural Language Processing, Computer Vision.
-          </p>
-          <p>
-            I'm also a competitive coder. Python is my favorite language but
-            when it comes to competitive coding, I prefer to use C++.
-          </p>
-          <p>In love with Open Source.</p>
-          <p>
-            If I need to define myself in one sentence that would be an Anime
-            Lover, and tech-obsessed!!!
+          <p >
+            👋 Hi, I'm @Rasel Mahmud a JavaScript Developer. 💞️ I Have 2 Years
+            + Experience as a Web Designer at Fiverr And I'm Working With Many
+            Clients, got a level one seller badge at Fiverr.
+            <br />
+            🌱 I Have Powerful Experience In:
+            <li> JavaScript ES6 including DOM manipulation</li>
+            <li> React JS, Node JS, Express JS, MongoDB</li>
+            <li> CRUD operation using RESTful APIs</li>
+            <li> WordPress theme customization</li>
+            <li> TailWind, It's components library eg. Flowbit, DaisyUI</li>
+            <li>
+              Bootsrap, It's components library, eg. React-bootstrap, Reactstrap
+            </li>
+            <li> HTML5, CSS3</li>
+            <li> Familiar with Firebase, Heroku, Figma, Photoshop</li>
+           
           </p>
         </div>
 
@@ -81,7 +82,7 @@ const About = () => {
       </div>
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

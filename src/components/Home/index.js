@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import Logo from './Logo'
-import './index.scss'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Loader from "react-loaders";
+import AnimatedLetters from "../AnimatedLetters";
+import Logo from "./Logo";
+import "./index.scss";
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = 'Rasel'.split('')
-  const jobArray = 'Full Stack'.split('')
-  const interestArray = 'JavaScript'.split('')
-  const enthusiastArray = 'Engineer'.split('')
+  const nameArray = "Rasel".split("");
+  const jobArray = "Full Stack".split("");
+  const interestArray = "JavaScript".split("");
+  const enthusiastArray = "Engineer".split("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 4000)
-    return () => clearTimeout(timer)
-  }, [])
+      setLetterClass("text-animate-hover");
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -56,22 +56,29 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>
-            Full Stack Developer / JavaScript Engineer / Quick Learner
-          </h2>
-          <Link to="/contact" className="flat-button" style={{marginRight:"5px"}}>
+          <h2>Full Stack Developer / JavaScript Engineer / Quick Learner</h2>
+          <Link
+            to="/contact"
+            className="flat-button"
+            style={{ marginRight: "5px" }}
+          >
             CONTACT ME
           </Link>
-          <Link to="/" className="flat-button">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://drive.google.com/file/d/1_-Z9ZCreCDpGLM-pNxWC4d5TjbxjcJ8B/view?usp=sharing"
+            className="flat-button"
+          >
             RESUME
-          </Link>
+          </a>
         </div>
         <Logo />
       </div>
 
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

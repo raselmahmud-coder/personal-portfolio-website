@@ -122,3 +122,12 @@
     }
   }
 }
+$media-mobile-sm: "only screen and (max-width : 480px)";
+@media #{$media-mobile-sm} {
+  .info-map {
+    width: 100px;
+    right: 10%;
+    font-size: 10px !important;
+    line-height: 1em;
+  }
+}
