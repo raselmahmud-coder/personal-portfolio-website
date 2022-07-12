@@ -1,22 +1,23 @@
-import './index.scss'
-import LogoS from '../../assets/images/logo-s.png'
-import LogoSubtitle from '../../assets/images/Sudip_logo_white.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import "./index.scss";
+import LogoS from "../../assets/images/logo-s.png";
+import LogoSubtitle from "../../assets/images/sideber-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faHome,
   faUser,
   faEnvelope,
   faScrewdriverWrench,
-} from '@fortawesome/free-solid-svg-icons'
-import { Link, NavLink } from 'react-router-dom'
+  faBookSkull,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <>
       <div className="nav-bar">
         <Link className="logo" to="/">
-          <img src={LogoS} alt="Logo" />
+          {/* <img src={LogoS} alt="Logo" /> */}
           <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
         </Link>
         <nav>
@@ -33,6 +34,14 @@ const Sidebar = () => {
             to="/skills"
           >
             <FontAwesomeIcon icon={faScrewdriverWrench} color="#4d4d4e" />
+          </NavLink>
+
+          <NavLink
+            activeclassname="active"
+            className="experiences-link"
+            to="/experiences"
+          >
+            <FontAwesomeIcon icon={faBookSkull} color="#4d4d4e" />
           </NavLink>
 
           <NavLink
@@ -65,7 +74,7 @@ const Sidebar = () => {
         </ul>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

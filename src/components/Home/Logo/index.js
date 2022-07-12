@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useRef } from "react";
-import LogoS from "../../../assets/images/logo-s.png";
+import LogoS from "../../../assets/images/pro.rasel.png";
 import "./index.scss";
 
 const Logo = () => {
   const bgRef = useRef();
-  const outlineLogoRef = useRef();
   const solidLogoRef = useRef();
 
   return (
@@ -14,7 +13,7 @@ const Logo = () => {
         className="solid-logo"
         ref={solidLogoRef}
         src={LogoS}
-        alt="JavaScript,  Developer"
+        alt="JavaScript, Developer"
       />
     </div>
   );
